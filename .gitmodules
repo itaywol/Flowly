@@ -1,0 +1,6 @@
+[submodule "PerformaFront"]
+	path = PerformaFront
+	url = git@github.com:itaywol/PerformaFront.git
+[submodule "PerformaBack"]
+	path = PerformaBack
+	url = git@github.com:itaywol/PerformaBack.git
