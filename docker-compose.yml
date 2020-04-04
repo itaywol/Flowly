@@ -61,4 +61,3 @@ services:
 networks:
   performa_network:
     driver: bridge
-    name: "${NETWORK_NAME}"
