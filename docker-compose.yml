@@ -7,8 +7,8 @@ services:
       context: ./PerformaFront
       dockerfile: Dockerfile-dev
     volumes:
-      - "./PerformaFront:/usr/src/app"
-      - "./PerformaFront/dist:/usr/src/app/dist"
+      - "./PerformaFront/src:/usr/src/app/src"
+      - "./PerformaFront/public:/usr/src/app/public"
     environment:
       NODE_ENV: $NODE_ENV
       PORT: 5858
@@ -50,7 +50,6 @@ services:
     ports:
       - "${NGINX_PORT}:80"
     volumes:
-      - "./PerformaFront/dist:/var/www/html/"
       - "./nginx/conf.d/local.conf:/etc/nginx/conf.d/default.conf"
     networks:
       - performa_network
