@@ -49,5 +49,5 @@ services:
       - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
       - "./nginx/streaming.conf:/etc/nginx/streaming.conf"
     depends_on:
-      - front
+      - ui
 
