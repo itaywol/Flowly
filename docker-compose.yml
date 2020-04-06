@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - "./PerformaFront/src:/usr/src/app/src"
+      - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
       - "./PerformaFront/public:/usr/src/app/public"
     environment:
       NODE_ENV: $NODE_ENV
@@ -23,10 +24,12 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - "./PerformaBack/src:/usr/src/app/src"
+      - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
     environment:
       NODE_ENV: $NODE_ENV
       PORT: $GRAPH_PORT
       MONGO_URI: "mongodb://mongo:${MONGO_PORT}/${MONGO_DB_NAME}"
+      SESSION_SECRET: "ksbfysdfsnhdfsyufsjhflsh98fdusf"
     ports:
       - "${GRAPH_PORT}:${GRAPH_PORT}"
 
