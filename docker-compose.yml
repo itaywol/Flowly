@@ -30,6 +30,7 @@ services:
       PORT: $GRAPH_PORT
       MONGO_URI: "mongodb://mongo:${MONGO_PORT}/${MONGO_DB_NAME}"
       SESSION_SECRET: "ksbfysdfsnhdfsyufsjhflsh98fdusf"
+      RTMP_IINER_URL: "http://127.0.0.1:1935/hls-live/"
     ports:
       - "${GRAPH_PORT}:${GRAPH_PORT}"
 
