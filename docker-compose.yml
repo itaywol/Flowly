@@ -13,12 +13,12 @@ services:
     environment:
       NODE_ENV: $NODE_ENV
       PORT: $UI_PORT
-      BACKEND_URI: "localhost:${NGINX_PORT}/graphql"
+      BACKEND_URI: "localhost:${NGINX_PORT}/"
     ports:
       - "${UI_PORT}:${UI_PORT}"
 
-  gql:
-    container_name: ${PROJECT_NAME}_gql
+  back:
+    container_name: ${PROJECT_NAME}_back
     build:
       context: ./PerformaBack
       dockerfile: Dockerfile-dev
@@ -27,12 +27,13 @@ services:
       - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
     environment:
       NODE_ENV: $NODE_ENV
-      PORT: $GRAPH_PORT
+      PORT: $BACK_PORT
       MONGO_URI: "mongodb://mongo:${MONGO_PORT}/${MONGO_DB_NAME}"
       SESSION_SECRET: "ksbfysdfsnhdfsyufsjhflsh98fdusf"
-      RTMP_IINER_URL: "http://127.0.0.1:1935/hls-live/"
+      RTMP_INNER_URL: "rtmp://127.0.0.1:1935/hls-live/"
+      STREAM_REQUIRES_AUTH: "false"
     ports:
-      - "${GRAPH_PORT}:${GRAPH_PORT}"
+      - "${BACK_PORT}:${BACK_PORT}"
 
   mongo:
     container_name: ${PROJECT_NAME}_mongo
