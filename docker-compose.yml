@@ -33,6 +33,8 @@ services:
       RTMP_INNER_URL: "rtmp://127.0.0.1:1935/hls-live/"
       WATCHING_STREAM_REQUIRES_AUTH: "false"
       STREAM_KEYS_PREFIX: "Perform"
+      GOOGLE_STORAGE_BUCKET_NAME: "performa_dev"
+      GOOGLE_PROJECT_ID: "performa-273910"
     ports:
       - "${BACK_PORT}:${BACK_PORT}"
 
