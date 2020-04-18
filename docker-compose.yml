@@ -40,6 +40,9 @@ services:
       STREAM_KEYS_PREFIX: "Perform"
       GOOGLE_STORAGE_BUCKET_NAME: "performa_dev"
       GOOGLE_PROJECT_ID: "performa-273910"
+      BRAINTREE_PUBLIC_KEY: "z4hpgxgxnzhvy5qm"
+      BRAINTREE_PRIVATE_KEY: "03e2d4cb2abba13648ed7d6e71cc70cb"
+      BRAINTREE_MERCHANT_ID: "ddp5g7d4yw685jpx"
     ports:
       - "${BACK_PORT}:${BACK_PORT}"
 
