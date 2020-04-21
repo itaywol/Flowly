@@ -25,6 +25,7 @@ services:
     volumes:
       - "./PerformaBack/src:/usr/src/app/src"
       - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
+    command: npm run start:debug
     environment:
       NODE_ENV: $NODE_ENV
       PORT: $BACK_PORT
@@ -47,6 +48,7 @@ services:
     ports:
       - "${BACK_PORT}:${BACK_PORT}"
       - "${BACK_WS_PORT}:${BACK_WS_PORT}"
+      - "9229:9229"
 
   mongo:
     container_name: ${PROJECT_NAME}_mongo
