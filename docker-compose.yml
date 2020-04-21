@@ -36,7 +36,7 @@ services:
       SESSION_COOKIE_MAX_AGE: "2592000000"
       SESSION_MONGO_COLLECTION_NAME: "authSessions"
       PUBLIC_DOMAIN: "localhost"
-      RTMP_INNER_URL: "rtmp://127.0.0.1:1935/live/"
+      RTMP_INNER_URL: "rtmp://127.0.0.1:1935/encode/"
       WATCHING_STREAM_REQUIRES_AUTH: "false"
       STREAM_KEYS_PREFIX: "Perform"
       GOOGLE_STORAGE_BUCKET_NAME: "performa_dev"
