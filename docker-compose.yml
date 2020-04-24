@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3.7"
 
 services:
   ui:
@@ -22,7 +22,7 @@ services:
     container_name: ${PROJECT_NAME}_nest
     build:
       context: ./nest
-      dockerfile: Dockerfile-dev
+      target: development
     volumes:
       - "/usr/src/app/node_modules"
       - "./nest/src:/usr/src/app/src"
