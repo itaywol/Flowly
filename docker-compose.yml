@@ -4,13 +4,13 @@ services:
   ui:
     container_name: ${PROJECT_NAME}_ui
     build:
-      context: ./PerformaFront
+      context: ./ui
       dockerfile: Dockerfile-dev
     volumes:
       - "/usr/src/app/node_modules"
-      - "./PerformaFront/src:/usr/src/app/src"
-      - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
-      - "./PerformaFront/public:/usr/src/app/public"
+      - "./ui/src:/usr/src/app/src"
+      - "./common:/usr/src/app/src/common"
+      - "./ui/public:/usr/src/app/public"
     environment:
       NODE_ENV: $NODE_ENV
       PORT: $UI_PORT
@@ -21,12 +21,12 @@ services:
   back:
     container_name: ${PROJECT_NAME}_nest
     build:
-      context: ./PerformaBack
+      context: ./nest
       dockerfile: Dockerfile-dev
     volumes:
       - "/usr/src/app/node_modules"
-      - "./PerformaBack/src:/usr/src/app/src"
-      - "./PerformaCommon:/usr/src/app/src/PerformaCommon"
+      - "./nest/src:/usr/src/app/src"
+      - "./common:/usr/src/app/src/common"
     command: npm run start:debug
     environment:
       NODE_ENV: $NODE_ENV
