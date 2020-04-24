@@ -4,3 +4,9 @@
 [submodule "PerformaBack"]
 	path = PerformaBack
 	url = git@github.com:itaywol/PerformaBack.git
+[submodule "nest"]
+	path = nest
+	url = git@github.com:itaywol/FlowlyNest.git
+[submodule "ui"]
+	path = ui
+	url = git@github.com:itaywol/FlowlyUI.git
