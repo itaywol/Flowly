@@ -19,7 +19,7 @@ services:
       - "${UI_PORT}:${UI_PORT}"
 
   back:
-    container_name: ${PROJECT_NAME}_back
+    container_name: ${PROJECT_NAME}_nest
     build:
       context: ./PerformaBack
       dockerfile: Dockerfile-dev
