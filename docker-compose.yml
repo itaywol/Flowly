@@ -33,6 +33,8 @@ services:
       PORT: $BACK_PORT
       PORT_WS: $BACK_WS_PORT
       MONGO_URI: "mongodb://mongo:${MONGO_PORT}/${MONGO_DB_NAME}"
+      REDIS_URL: "redis"
+      REDIS_PORT: $REDIS_PORT
       EXPRESS_CORS: '*'
       SESSION_SECRET: "ksbfysdfsnhdfsyufsjhflsh98fdusf"
       SESSION_COOKIE_NAME: "performa_auth"
@@ -53,6 +55,14 @@ services:
       - "${BACK_PORT}:${BACK_PORT}"
       - "${BACK_WS_PORT}:${BACK_WS_PORT}"
       - "9229:9229"
+    depends_on:
+      - redis
+
+  redis:
+    container_name: ${PROJECT_NAME}_redis
+    image: redis:latest
+    ports: 
+      - "${REDIS_PORT}:${REDIS_PORT}"
 
   mongo:
     container_name: ${PROJECT_NAME}_mongo
