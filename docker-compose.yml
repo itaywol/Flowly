@@ -37,7 +37,7 @@ services:
       REDIS_PORT: $REDIS_PORT
       EXPRESS_CORS: '*'
       SESSION_SECRET: "ksbfysdfsnhdfsyufsjhflsh98fdusf"
-      SESSION_COOKIE_NAME: "performa_auth"
+      SESSION_COOKIE_NAME: "flowly_auth"
       SESSION_COOKIE_MAX_AGE: "2592000000"
       SESSION_MONGO_COLLECTION_NAME: "authSessions"
       PUBLIC_DOMAIN: "localhost"
