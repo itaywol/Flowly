@@ -51,7 +51,6 @@ services:
       BRAINTREE_MERCHANT_ID: "ddp5g7d4yw685jpx"
       PAYPAL_CLIENT_ID: "AX99iMVMS7THAEaVnN3z2FZuqBIjoFP4AE1JZzHdLPfa_aS8nSpFEiLUP1yjkpiAk5MfLvxTozvcxqUb"
       PAYPAL_CLIENT_SECRET: "EAVw6EH8s4mdJguHOMsrLXHF9oFHHR2I3243UmI65IOYTecl1vffqKya0tYf697KYOZxduNDalvKDBTh"
-      PUBLIC_DOMAIN: "localhost"
     ports:
       - "${BACK_PORT}:${BACK_PORT}"
       - "${BACK_WS_PORT}:${BACK_WS_PORT}"
