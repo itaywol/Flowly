@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: docker-compose is not installed.' >&2
@@ -53,7 +53,8 @@ echo
 echo "### Requesting Let's Encrypt certificate for $domains ..."
 #Join $domains to -d args
 domain_args=""
-for domain in "${domains[@]}"; do
+for domain in "${domains[@]}"
+do
   domain_args="$domain_args -d $domain"
 done
 
