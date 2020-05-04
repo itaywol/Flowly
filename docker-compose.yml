@@ -70,7 +70,7 @@ services:
     ports:
       - "${MONGO_PORT}:${MONGO_PORT}"
     volumes:
-      - ./data/mongo:/data/db
+      - mongodata
 
   nginx:
     container_name: ${PROJECT_NAME}_nginx
@@ -96,3 +96,5 @@ services:
       - ./data/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
+volumes: 
+  mongodata:
